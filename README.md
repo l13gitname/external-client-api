@@ -34,7 +34,60 @@ $ npm install
 
 ## Installation (IIS)
 
-Test
+1. run 
+```bash
+npm run build:prod
+```
+2. copy file ใน folder dist ไปวางไว้ใน iis directory
+3. สร้างไฟล์ web.config 
+```bash
+<configuration>
+  <system.webServer>    
+    <rewrite>
+      <rules>
+        <rule name="myapp">
+          <match url="/*" />
+          <action type="Rewrite" url="main.js" />
+        </rule>
+      </rules>
+    </rewrite>
+
+    <iisnode node_env="production" nodeProcessCommandLine="&quot;C:\Program Files\nodejs\node.exe&quot;" interceptor="&quot;%programfiles%\iisnode\interceptor.js&quot;" />
+
+  </system.webServer>
+    <location path="" overrideMode="Deny">
+        <system.webServer>
+    <handlers>
+      <add name="iisnode" path="main.js" verb="*" modules="iisnode" />
+    </handlers>
+        </system.webServer>
+    </location>
+</configuration>
+```
+4. นำไฟล์ web.config ไปวางไว้ใน path directory iis (ที่เดียวกับไฟล์ในข้อ 2.)
+5. กำหนดค่า environment ใน web.config file โดยแปลง code จาก .env หรือ environment ที่เลือกใช้ ในรูปแบบ xml tag
+   ```bash
+   <configuration>
+  ...
+<appSettings>
+  <add key="ENV_PATH" value="HTTPS" />
+  <add key="JWT_KEY" value="9GFVMWHlI5IsnsJX3W44Vhll878NeQEU" />
+  <add key="DB_HOST" value="192.168.40.18" />
+  <add key="DB_SCHEMA" value="MOBILEMPLS" />
+  <add key="DB_PORT" value="1521" />
+  <add key="DB_APIUSER" value="MOBILEMPLS" />
+  <add key="DB_PASSWORD" value="oracle" />
+  <add key="DB_CONNECTSTR" value="MPLORCL" />
+  <add key="API_HEADER" value="http://" />
+  <add key="API_URL" value="localhost" />
+  <add key="API_PORTSIGN" value=":" />
+  <add key="API_PORT" value="443" />
+  <add key="DIPCH_HEADER" value="HTTPS://" />
+  <add key="DIPCH_API" value="api-dipch-uat.microplusleasing.com" />
+</appSettings>
+</configuration>
+   ```
+6. ตรวจเช็คการให้สิทธิ์ในการ read/write ไฟล์ใน folder directory iis โดยให้สิทธิ์ IIS_USER 
 
 ## Running the app
 
