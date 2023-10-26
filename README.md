@@ -70,20 +70,10 @@ npm run build:prod
      <configuration>
         ...
       <appSettings>
-        <add key="ENV_PATH" value="HTTPS" />
-        <add key="JWT_KEY" value="9GFVMWHlI5IsnsJX3W44Vhll878NeQEU" />
-        <add key="DB_HOST" value="192.168.40.18" />
-        <add key="DB_SCHEMA" value="MOBILEMPLS" />
-        <add key="DB_PORT" value="1521" />
-        <add key="DB_APIUSER" value="MOBILEMPLS" />
-        <add key="DB_PASSWORD" value="oracle" />
-        <add key="DB_CONNECTSTR" value="MPLORCL" />
-        <add key="API_HEADER" value="http://" />
-        <add key="API_URL" value="localhost" />
-        <add key="API_PORTSIGN" value=":" />
-        <add key="API_PORT" value="443" />
-        <add key="DIPCH_HEADER" value="HTTPS://" />
-        <add key="DIPCH_API" value="api-dipch-uat.microplusleasing.com" />
+        <add key="ENV_PATH" value="..." />
+        <add key="JWT_KEY" value="..." />
+        <add key="DB_HOST" value="..." />
+        ...
       </appSettings>
     </configuration>
    ```
