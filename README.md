@@ -32,6 +32,10 @@
 $ npm install
 ```
 
+## Installation (IIS)
+
+Test
+
 ## Running the app
 
 ```bash
