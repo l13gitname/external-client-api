@@ -65,7 +65,7 @@ npm run build:prod
 </configuration>
 ```
 4. นำไฟล์ web.config ไปวางไว้ใน path directory iis (ที่เดียวกับไฟล์ในข้อ 2.)
-5. กำหนดค่า environment ใน web.config file โดยแปลง code จาก .env หรือ environment ที่เลือกใช้ ในรูปแบบ xml tag
+5. กำหนดค่า environment โดยแปลง code จาก .env หรือ environment ที่เลือกใช้ ในรูปแบบ xml tag แล้วนำไปใส่ใน file web.config ตามตัวอย่างด้านล่าง
    ```bash
      <configuration>
         ...
